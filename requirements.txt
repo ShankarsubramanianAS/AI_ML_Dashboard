@@ -21,7 +21,6 @@ audio-recorder-streamlit
 audiorecorder
 IPython
 sounddevice
-PIL
 noisereduce
 time
 denoiser
