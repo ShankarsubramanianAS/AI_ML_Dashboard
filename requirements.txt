@@ -1,4 +1,4 @@
-#/home/appuser/venv/bin/python -m pip install --upgrade pip
+--upgrade pip
 streamlit
 numpy
 pandas
@@ -18,17 +18,17 @@ matplotlib
 onnx
 thop
 Cython
-#audio-recorder-streamlit
-#audiorecorder
-#ipython
+audio-recorder-streamlit
+audiorecorder
+ipython
 #sounddevice
 time
 denoiser
-#moviepy
+moviepy
 cv2
-#pydub
-#streamlit_toggle
-#psutil
+pydub
+streamlit_toggle
+psutil
 wave
-#av
-#tempfile
+av
+tempfile
