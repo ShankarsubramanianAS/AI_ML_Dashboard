@@ -28,7 +28,7 @@ st.set_page_config(page_title="Detection & Segmentation", page_icon="")
 app_mode = st.sidebar.selectbox('Choose the App Mode',
                                 ['Play Demo','Car Damage Detection','Car Damage Segmentation'])
 ## Assign file paths here
-audio_file_path = "C:/Users/shank/Desktop/aiml/ai_dashboard/static/audio/audio.wav"
+audio_file_path = "static/audio/audio.wav"
 
 # Define functions
 
@@ -58,7 +58,7 @@ def play_audio(filename):
 # Detection & Segmentation
 if app_mode == 'Play Demo':
     st.subheader("Detection & Segmentation")
-    seg_gif = load_gif("C:/Users/shank/Desktop/aiml/ai_dashboard/static/segmentation1.gif")
+    seg_gif = load_gif("static/segmentation1.gif")
     st.image(seg_gif, width=680, output_format="GIF")
     st.sidebar.caption("Hyperparameter Tuning")
     st.sidebar.select_slider('Select a Threshold',options=['0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7'])
