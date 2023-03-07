@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 st.set_page_config(page_title="AKKODIS AI DASHBOARD", page_icon=":guardsman:", layout="centered")
-header_image = Image.open("AI_ML_Dashboard/static/images/header.jpeg")
+header_image = Image.open("/static/images/header.jpeg")
 st.image(header_image,use_column_width=True , output_format="JPEG")
 
 ## Assign file paths here
