@@ -1,19 +1,4 @@
-import cv2
-import os
-import time
 import streamlit as st
-from PIL import Image, GifImagePlugin
-import sounddevice as sd
-import IPython
-from IPython.display import display, HTML
-import numpy as np
-from tqdm import tqdm 
-import scipy.io.wavfile as wavfile
-from scipy.io import wavfile
-import noisereduce as nr
-import av
-import torch
-import tempfile
 
 st.set_page_config(page_title="AKKODIS AI DASHBOARD", page_icon=":guardsman:", layout="centered")
 header_image = Image.open("C:/Users/shank/Desktop/aiml/ai_dashboard//static/images/header.jpeg")
