@@ -19,7 +19,7 @@ thop
 Cython
 audio-recorder-streamlit
 audiorecorder
-IPython
+ipython
 #sounddevice
 time
 denoiser
