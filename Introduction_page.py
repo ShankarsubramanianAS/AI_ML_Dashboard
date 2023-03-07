@@ -1,11 +1,11 @@
 import streamlit as st
 
 st.set_page_config(page_title="AKKODIS AI DASHBOARD", page_icon=":guardsman:", layout="centered")
-header_image = Image.open("C:/Users/shank/Desktop/aiml/ai_dashboard//static/images/header.jpeg")
+header_image = Image.open("https://github.com/ShankarsubramanianAS/AI_ML_Dashboard/blob/main/static/images/header.jpeg")
 st.image(header_image,use_column_width=True , output_format="JPEG")
 
 ## Assign file paths here
-audio_file_path = "C:/Users/shank/Desktop/aiml/ai_dashboard/static/audio/audio.wav"
+audio_file_path = "https://github.com/ShankarsubramanianAS/AI_ML_Dashboard/blob/main/static/audio/audio.wav"
 
 st.markdown(
     """
