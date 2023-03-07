@@ -20,7 +20,7 @@ Cython
 audio-recorder-streamlit
 audiorecorder
 ipython==8.11.0
-sounddevice
+sounddevice==0.4.6
 time
 denoiser
 moviepy
