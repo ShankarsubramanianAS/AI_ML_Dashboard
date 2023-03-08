@@ -130,15 +130,15 @@ if app_mode == 'Run on WebCam':
     stop = st.sidebar.button("Stop")
     st.sidebar.markdown("---")
     
-    cam = cv2.VideoCapture(1)
+    #cam = cv2.VideoCapture(1)
     if(run):
         while(True):
             if(stop):
                 break
-            ret,frame = cam.read()
-            if not ret:
-                print("Can't receive frame (stream end?). Exiting ...")
-                break
+#             ret,frame = cam.read()
+#             if not ret:
+#                 print("Can't receive frame (stream end?). Exiting ...")
+#                 break
             #frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)\
             frame = webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
             model = load_model()
