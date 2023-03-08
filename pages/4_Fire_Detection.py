@@ -1,12 +1,21 @@
-import streamlit as st
+
 import cv2
-import numpy as np
-import av
+import os
+import time
+import streamlit as st
+from PIL import Image, GifImagePlugin
+#import IPython
+#from IPython.display import display, HTML, Image
+#from IPython.display import  Image as IMG
+#import numpy as np
+from tqdm import tqdm 
+from scipy.io import wavfile
+#import av
 import torch
 import tempfile
-from PIL import Image
+import sys
 
-fire_file_path ="C:/Users/shank/Desktop/aiml/fire_detection/Fire_Detection_YoloV5/"
+fire_file_path ="fire_detection/Fire_Detection_YoloV5/"
 weights_file_path = fire_file_path + "weights/best.pt"
 
 @st.cache()
