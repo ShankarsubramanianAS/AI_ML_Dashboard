@@ -1,10 +1,22 @@
 # activating the seatbelt detection conda env 
-import subprocess
-subprocess.call('conda activate anc', shell=True)
-
+import cv2
+import os
+import time
+import streamlit as st
+from PIL import Image, GifImagePlugin
+#import IPython
+#from IPython.display import display, HTML, Image
+#from IPython.display import  Image as IMG
+import numpy as np
+from tqdm import tqdm 
+from scipy.io import wavfile
+#import av
+import torch
+import tempfile
+from PIL import Image 
+import sys
 
 import streamlit as st
-from IPython import display as disp
 import torch
 import torchaudio
 from PIL import Image, ImageOps
