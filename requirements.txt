@@ -17,4 +17,4 @@ matplotlib
 onnx
 Cython
 denoiser
-
+psutil
