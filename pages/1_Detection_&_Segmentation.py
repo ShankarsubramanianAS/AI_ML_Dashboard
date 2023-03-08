@@ -24,8 +24,7 @@ st.set_page_config(page_title="Detection & Segmentation", page_icon="")
 #st.sidebar.title("Select App Mode")
 app_mode = st.sidebar.selectbox('Choose the App Mode',
                                 ['Play Demo','Car Damage Detection'])
-## Assign file paths here
-audio_file_path = "static/audio/audio.wav"
+
 
 # Define functions
 
@@ -69,7 +68,7 @@ if app_mode == 'Play Demo':
 #demo_img = car_file_path + "/data/test/76.jpg"
 #demo_video = car_file_path + "videoplayback.mp4"
 
-video_file = open("static/video/cardamagedetect.mp4", 'rb')
+video_file = open("static/videos/cardamagedetect.mp4", 'rb')
 video_bytes = video_file.read()
 
 if app_mode == 'Car Damage Detection':
