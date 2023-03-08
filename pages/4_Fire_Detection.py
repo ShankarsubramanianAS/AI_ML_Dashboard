@@ -32,7 +32,7 @@ def video_frame_callback(frame):
 fire_file_path ="fire_detection/Fire_Detection_YoloV5/"
 weights_file_path = fire_file_path + "weights/best.pt"
 
-@st.cache()
+@st.cache_data()
 def load_model():
     model = torch.hub.load('ultralytics/yolov5','custom',path=weights_file_path ,force_reload=True)
     return model
