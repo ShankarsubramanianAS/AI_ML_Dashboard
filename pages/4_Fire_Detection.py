@@ -14,6 +14,7 @@ from scipy.io import wavfile
 import torch
 import tempfile
 import sys
+import numpy as np
 
 fire_file_path ="fire_detection/Fire_Detection_YoloV5/"
 weights_file_path = fire_file_path + "weights/best.pt"
