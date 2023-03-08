@@ -124,6 +124,9 @@ if app_mode == 'Run on WebCam':
             if(stop):
                 break
             ret,frame = cam.read()
+            if not ret:
+                print("Can't receive frame (stream end?). Exiting ...")
+                break
             frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
             model = load_model()
             results = model(frame)
