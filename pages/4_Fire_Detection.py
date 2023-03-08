@@ -118,7 +118,7 @@ if app_mode == 'Run on WebCam':
     stop = st.sidebar.button("Stop")
     st.sidebar.markdown("---")
     
-    cam = cv2.VideoCapture(0)
+    cam = cv2.VideoCapture(1)
     if(run):
         while(True):
             if(stop):
