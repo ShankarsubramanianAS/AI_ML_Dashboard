@@ -18,3 +18,5 @@ onnx
 Cython
 denoiser
 psutil
+streamlit_webrtc
+av
