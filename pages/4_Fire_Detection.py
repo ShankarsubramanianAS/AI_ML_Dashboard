@@ -16,6 +16,18 @@ import tempfile
 import sys
 import numpy as np
 import psutil
+from streamlit_webrtc import webrtc_streamer
+import av
+
+
+def video_frame_callback(frame):
+    img = frame.to_ndarray(format="bgr24")
+
+    flipped = img[::-1,:,:]
+
+    return av.VideoFrame.from_ndarray(flipped, format="bgr24")
+
+
 
 fire_file_path ="fire_detection/Fire_Detection_YoloV5/"
 weights_file_path = fire_file_path + "weights/best.pt"
@@ -127,7 +139,8 @@ if app_mode == 'Run on WebCam':
             if not ret:
                 print("Can't receive frame (stream end?). Exiting ...")
                 break
-            frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
+            #frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)\
+            frame = webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
             model = load_model()
             results = model(frame)
             length = len(results.xyxy[0])
