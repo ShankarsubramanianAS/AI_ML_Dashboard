@@ -20,3 +20,4 @@ denoiser
 psutil
 streamlit_webrtc
 av
+audio-recorder-streamlit
