@@ -96,12 +96,15 @@ if app_mode == 'Play Demo':
 def denoise_audio(file_path):
     # Load the original audio
     # Denoise the audio and save it to a new file
-    model = pretrained.dns64().cuda()
+    #model = pretrained.dns64().cuda()
+    model = pretrained.dns64()
+
     wav, sr = torchaudio.load(file_path)
-    wav = convert_audio(wav.cuda(), sr, model.sample_rate, model.chin)
+    #wav = convert_audio(wav.cuda(), sr, model.sample_rate, model.chin) #unhash if gpu is available
+    wav = convert_audio(wav.cpu(), sr, model.sample_rate, model.chin)
     with torch.no_grad():
-        denoised = model(wav.cuda())[0]
-        #denoised = model(wav[None])[0]
+        #denoised = model(wav.cuda())[0]
+        denoised = model(wav[None])[0]
     denoised_file_path = os.path.join(folder_path, "denoised_" + uploaded_file.name)
     torchaudio.save(denoised_file_path, denoised.cpu(), model.sample_rate)
     return denoised_file_path
@@ -109,12 +112,14 @@ def denoise_audio(file_path):
 def denoise_audio1(file_path):
     # Load the original audio
     # Denoise the audio and save it to a new file
-    model = pretrained.dns64().cuda()
+    #model = pretrained.dns64().cuda()
+    model = pretrained.dns64().cpu()
     wav, sr = torchaudio.load(file_path)
-    wav = convert_audio(wav.cuda(), sr, model.sample_rate, model.chin)
+    #wav = convert_audio(wav.cuda(), sr, model.sample_rate, model.chin)
+    wav = convert_audio(wav.cpu(), sr, model.sample_rate, model.chin)
     with torch.no_grad():
-        denoised = model(wav.cuda())[0]
-        #denoised = model(wav[None])[0]
+        #denoised = model(wav.cuda())[0]
+        denoised = model(wav[None])[0]
     denoised_file_path = os.path.join(folder_path, "denoised_" + "sample.wav")
     torchaudio.save(denoised_file_path, denoised.cpu(), model.sample_rate)
     return denoised_file_path
