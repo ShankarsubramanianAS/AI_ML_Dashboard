@@ -21,3 +21,4 @@ psutil
 streamlit_webrtc
 av
 audio-recorder-streamlit
+streamlit-toggle-switch
