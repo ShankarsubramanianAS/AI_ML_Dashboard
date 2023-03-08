@@ -29,4 +29,4 @@ pystoi==0.3.3
 git+https://github.com/ludlows/python-pesq#egg=pesq
 six
 sounddevice==0.4.0
-
+openai
