@@ -5,7 +5,7 @@ torch
 torchvision
 torchaudio 
 Cython
-opencv-python
+opencv-python-headless
 Pillow
 PyYAML
 scipy
