@@ -9,12 +9,12 @@ from PIL import Image, GifImagePlugin
 #import numpy as np
 from tqdm import tqdm 
 from scipy.io import wavfile
-import av
+#import av
 import torch
 import tempfile
 from PIL import Image 
 import sys
-sys.path.insert(0, './yolov8')
+#sys.path.insert(0, './yolov8')
 
 #st.set_page_config(page_title="AKKODIS AI DASHBOARD", page_icon=":guardsman:", layout="centered")
 #header_image = Image.open("C:/Users/shank/Desktop/aiml/ai_dashboard//static/images/header.jpeg")
@@ -73,9 +73,9 @@ if app_mode == 'Play Demo':
 from ultralytics import YOLO
 
 
-car_file_path ="C:/Users/shank/Desktop/aiml/car_damage"
-weights_file_path = car_file_path + "/weights/8s/best.pt"
-demo_img = car_file_path + "/data/test/76.jpg"
+#car_file_path ="C:/Users/shank/Desktop/aiml/car_damage"
+#weights_file_path = car_file_path + "/weights/8s/best.pt"
+#demo_img = car_file_path + "/data/test/76.jpg"
 #demo_video = car_file_path + "videoplayback.mp4"
 
 if app_mode == 'Car Damage Detection':
