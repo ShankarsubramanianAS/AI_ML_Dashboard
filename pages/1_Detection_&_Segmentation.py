@@ -23,7 +23,7 @@ st.set_page_config(page_title="Detection & Segmentation", page_icon="")
 
 #st.sidebar.title("Select App Mode")
 app_mode = st.sidebar.selectbox('Choose the App Mode',
-                                ['Play Demo','Car Damage Detection','Car Damage Segmentation'])
+                                ['Play Demo','Car Damage Detection'])
 ## Assign file paths here
 audio_file_path = "static/audio/audio.wav"
 
@@ -42,15 +42,6 @@ def get_camera_stream():
 def load_gif(path):
     return open(path, "rb").read()
 
-def record_audio(filename, duration):
-    fs = 44100  # sample rate
-    recording = sd.rec(int(duration * fs), samplerate=fs, channels=2)
-    sd.wait()  # Wait until recording is finished
-    wavfile.write(filename, fs, recording)  # Save recording to a .wav file
-
-def play_audio(filename):
-    fs, recording = wavfile.read(filename)  # Load recording from .wav file
-    sd.play(recording, blocking=True)  # Play recording
 
 # Detection & Segmentation
 if app_mode == 'Play Demo':
@@ -70,7 +61,7 @@ if app_mode == 'Play Demo':
     #     get_camera_stream()
 
 
-from ultralytics import YOLO
+#from ultralytics import YOLO
 
 
 #car_file_path ="C:/Users/shank/Desktop/aiml/car_damage"
@@ -78,51 +69,13 @@ from ultralytics import YOLO
 #demo_img = car_file_path + "/data/test/76.jpg"
 #demo_video = car_file_path + "videoplayback.mp4"
 
+video_file = open("static/video/cardamagedetect.mp4", 'rb')
+video_bytes = video_file.read()
+
 if app_mode == 'Car Damage Detection':
-    model = YOLO(weights_file_path)  # load a custom model
-    results = model(demo_img)  # predict on an image
-    st.image(results)
-
-
-
-
-@st.cache()
-def load_model():
-    model = torch.hub.load('ultralytics/yolov8s','custom',path=weights_file_path ,force_reload=True)
-    return model
-
-
-if app_mode == 'Car Damage Segmentation':
-#     pass
-# if app_mode == 'Run on Image':
-    st.subheader("Detected Damage and Scratch :")
+    st.subheader("Detected Damages")
+    st.video(video_bytes)
     text = st.markdown("")
+
+
     
-    st.sidebar.markdown("---")
-    # Input for Image
-    img_file = st.sidebar.file_uploader("Upload an Image",type=["jpg","jpeg","png"])
-    if img_file:
-        image = np.array(Image.open(img_file))
-    else:
-        image = np.array(Image.open(demo_img))
-        
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("**Original Image**")
-    st.sidebar.image(image)
-    
-    # predict the image
-    model = load_model()
-    results = model(image)
-    length = len(results.xyxy[0])
-    if length > 0:
-        length1 = "Damage / Scratch Detected !!!"
-    else:
-        length1 = "All Clear"
-    output = np.squeeze(results.render())
-    text.write(f"<h1 style='text-align: center; color:orange;'>{length1}</h1>",unsafe_allow_html = True)
-    st.subheader("Output Image")
-    st.image(output,use_column_width=True)
-
-
-
-
