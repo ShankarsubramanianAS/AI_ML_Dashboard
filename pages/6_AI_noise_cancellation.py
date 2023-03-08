@@ -45,10 +45,10 @@ st.set_page_config(page_title="Ai Noise cancellation", page_icon="")
 app_mode = st.sidebar.selectbox('Choose the App Mode',
                                 ['Play Demo','Run on Audio','Record your own audio'])
 
-video = cv2.VideoCapture('C:/Users/shank/Desktop/aiml/ai_dashboard/static/audio/boeingtest.mp4')
-video_file = open("C:/Users/shank/Desktop/aiml/ai_dashboard/static/audio/boeingtest.mp4", 'rb')
+video = cv2.VideoCapture('static/audio/boeingtest.mp4')
+video_file = open("static/audio/boeingtest.mp4", 'rb')
 video_bytes = video_file.read()
-audio_file = "C:/Users/shank/Desktop/aiml/ai_dashboard/static/audio/boeingtest.mp3"
+audio_file = "static/audio/boeingtest.mp3"
 
 
 # Define a function to play and pause the audio
@@ -68,7 +68,7 @@ if app_mode == 'Play Demo':
     st.video(video_bytes)
 
     tog_swicth = tog.st_toggle_switch( 
-                    label="  Apply AI Noise cancellation",
+                    label="Apply AI Noise cancellation",
                     key="key1", 
                     default_value=False, 
                     label_after = True, 
@@ -130,7 +130,7 @@ if app_mode == 'Run on Audio':
 
     if uploaded_file is not None:
         # Save the file to a folder named "uploads"
-        folder_path = "C:/Users/shank/Desktop/aiml/ai_dashboard/static/audio/uploads"
+        folder_path = "static/audio/uploads"
         if not os.path.exists(folder_path):
             os.mkdir(folder_path)
         file_path = os.path.join(folder_path, uploaded_file.name)
@@ -175,7 +175,7 @@ if app_mode == 'Record your own audio':
     if audio_bytes:
         st.audio(audio_bytes, format="audio/mp3")
 
-        folder_path = "C:/Users/shank/Desktop/aiml/ai_dashboard/static/audio/uploads/"
+        folder_path = "static/audio/uploads/"
         wav_file = open(folder_path+"audio.mp3", "wb")
         wav_file.write(audio_bytes)
         aud_file = folder_path+"audio.mp3"
@@ -207,7 +207,7 @@ if app_mode == 'Record your own audio':
 
     if st.sidebar.button("Clear / Refresh"):
         # Set the directory and file path
-        folder_path = "C:/Users/shank/Desktop/aiml/ai_dashboard/static/audio/uploads/"
+        folder_path = "static/audio/uploads/"
         file_path = os.path.join(folder_path, "audio.mp3")
 
         if os.path.isfile(file_path):
