@@ -1,6 +1,7 @@
 streamlit
 numpy
 pandas
+ultralytics
 torch
 torchvision
 torchaudio 
