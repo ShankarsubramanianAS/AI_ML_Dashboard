@@ -1,7 +1,7 @@
 
 # activating the seatbelt detection conda env 
-import subprocess
-subprocess.call('conda activate seatbelt', shell=True)
+# import subprocess
+# subprocess.call('conda activate seatbelt', shell=True)
 
 
 import streamlit as st
